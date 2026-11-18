@@ -26,10 +26,32 @@ do {
         case 1:
             break;
         case 2:
+            let mensajeCupos = `Cupos disponibles: ${cuposDisponibles}\n`;
+            if (cuposDisponibles > 10) {
+                mensajeCupos += "Estado: Cupos disponibles";
+            } else if (cuposDisponibles >= 1 && cuposDisponibles <= 10) {
+                mensajeCupos += "Estado: Últimos cupos disponibles";
+            } else {
+                mensajeCupos += "Estado: Evento agotado";
+            }
+            alert(mensajeCupos);
             break;
         case 3:
+            alert(
+                "REPORTE DE INGRESOS\n" +
+                `Total de entradas vendidas: ${entradasVendidas}\n` +
+                `Total de ingresos acumulados: $${ingresosAcumulados.toFixed(2)}\n` +
+                `Número de compras realizadas: ${comprasRealizadas}`
+            );
             break;
         case 4:
+            alert(
+                "Saliendo del sistema...\n" +
+                "RESUMEN FINAL:\n" +
+                `Entradas vendidas: ${entradasVendidas}\n` +
+                `Ingresos totales: $${ingresosAcumulados.toFixed(2)}\n` +
+                `Cupos sobrantes: ${cuposDisponibles}`
+            );
             break;
         default:
             alert("Opción no válida. Por favor, intente de nuevo.");
